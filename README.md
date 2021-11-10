@@ -23,21 +23,21 @@ We'd like to thank all the contributors who worked on this release!
 
 ## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
 
-- We have refactored Install Packages and Create Packages to make maintenance easier ( #731. #746  and #743). 
-- There is a breaking change in the pool schema, Pools will succeed on deployment errors by default, as many of you have asked us to make the maintenance easier and this is the default approach followed on many projects (#755)
+- We have refactored Install Packages and Create Packages to make maintenance easier   [#731](https://github.com/Accenture/sfpowerscripts/pull/731) [#746](https://github.com/Accenture/sfpowerscripts/pull/746)  and [#743](https://github.com/Accenture/sfpowerscripts/pull/743). 
+- There is a breaking change in the pool schema, Pools will succeed on deployment errors by default, as many of you have asked us to make the maintenance easier and this is the default approach followed on many projects [#755](https://github.com/Accenture/sfpowerscripts/pull/755)
 
 ### :star: Enhancements
-* Added headers to all commands with sfpowerscripts version and release (#735)
+* Added headers to all commands with sfpowerscripts version and release [#735](https://github.com/Accenture/sfpowerscripts/pull/735)
 
 
 ### :lady_beetle:  Bug Fixes
-* assignPermSetsPostDeployment to be executed after postDeploymentScript (#729)
-* Remove sfpowerscripts orchestrator constructs from unlocked package (#738)
-* Fix profile redeployment for source package installations (#744)
-* 'default' folder not getting deployed on aliasified packages (#753)
-* Fix apex test metrics being reported incorrectly (#750)
-* Fix Typo in pool list command (#714)
-* Hold a deployment of package till permission set groups are updated (#732) 
+* assignPermSetsPostDeployment to be executed after postDeploymentScript [#729](https://github.com/Accenture/sfpowerscripts/issues/729)
+* Remove sfpowerscripts orchestrator constructs from unlocked package [#738](https://github.com/Accenture/sfpowerscripts/pull/738)
+* Fix profile redeployment for source package installations [#744](https://github.com/Accenture/sfpowerscripts/issues/744)
+* 'default' folder not getting deployed on aliasified packages [#753](https://github.com/Accenture/sfpowerscripts/issues/753)
+* Fix apex test metrics being reported incorrectly [#750](https://github.com/Accenture/sfpowerscripts/pull/750)
+* Fix Typo in pool list command [#714](https://github.com/Accenture/sfpowerscripts/issues/714)
+* Hold a deployment of package till permission set groups are updated [#732](https://github.com/Accenture/sfpowerscripts/issues/732)
 
 
 **Full Changelog**: https://github.com/Accenture/sfpowerscripts/compare/@dxatscale/sfpowerscripts@8.5.3...@dxatscale/sfpowerscripts@9.3.6
