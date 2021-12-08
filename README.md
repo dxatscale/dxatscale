@@ -51,8 +51,12 @@ December21(v3.4.0) features the following fixes and enhancements
 
 Docker Images updated for December Release
 
+- sfdx-cli - 7.129.0
 - sfpowerscripts - 10.2.0
-- sfpowerkit - 3.4.0
+- sfpowerkit - 3.4.2
+- sfdmu - 4.10.3
+- sfdx-browserforce-plugin - 2.7.1
+- vlocity - 1.14.16
 
 **Full Changelog**: https://github.com/dxatscale/docker-sfpowerscripts/compare/November21...December21
 
