@@ -1,8 +1,10 @@
 # dxatscale release log
 
+Please note only major releases will be published. Hotfix release will be updated in individual repositories release notes.
+
 # December 21
 
-## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
+# [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
 
 December 21 (v10.2.0) features the following features and fixes
 
@@ -26,7 +28,7 @@ December 21 (v10.2.0) features the following features and fixes
 **Full Changelog**: https://github.com/Accenture/sfpowerscripts/compare/@dxatscale/sfpowerscripts@9.3.6...@dxatscale/sfpowerscripts@10.2.0
 
 
-## [sfpowerkit](https://github.com/Accenture/sfpowerkit/)
+# [sfpowerkit](https://github.com/Accenture/sfpowerkit/)
 
 December21(v3.4.0) features the following fixes and enhancements
 
@@ -47,7 +49,7 @@ December21(v3.4.0) features the following fixes and enhancements
 
 
 
-## [docker-sfpowerscripts](https://github.com/dxatscale/docker-sfpowerscripts)
+# [docker-sfpowerscripts](https://github.com/dxatscale/docker-sfpowerscripts)
 
 Docker Images updated for December Release
 
@@ -66,7 +68,7 @@ Docker Images updated for December Release
 
 # November 21
 
-## [sfpowerkit](https://github.com/Accenture/sfpowerkit/)
+# [sfpowerkit](https://github.com/Accenture/sfpowerkit/)
 
 v3.3.4 features the following fixes and enhancements
 
@@ -85,7 +87,7 @@ We'd like to thank all the contributors who worked on this release!
 - [@genoud](https://github.com/genoud)
 - [@rody](https://github.com/rody)
 
-## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
+# [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
 
 - We have refactored Install Packages and Create Packages to make maintenance easier   [#731](https://github.com/Accenture/sfpowerscripts/pull/731) [#746](https://github.com/Accenture/sfpowerscripts/pull/746)  and [#743](https://github.com/Accenture/sfpowerscripts/pull/743). 
 - There is a breaking change in the pool schema, Pools will succeed on deployment errors by default, as many of you have asked us to make the maintenance easier and this is the default approach followed on many projects [#755](https://github.com/Accenture/sfpowerscripts/pull/755)
@@ -106,7 +108,7 @@ We'd like to thank all the contributors who worked on this release!
 
 **Full Changelog**: https://github.com/Accenture/sfpowerscripts/compare/@dxatscale/sfpowerscripts@8.5.3...@dxatscale/sfpowerscripts@9.3.6
 
-## [docker-sfpowerscripts](https://github.com/dxatscale/docker-sfpowerscripts)
+# [docker-sfpowerscripts](https://github.com/dxatscale/docker-sfpowerscripts)
 
 Docker Images updated for November Release
 
