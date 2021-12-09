@@ -1,4 +1,4 @@
-# dxatscale release log
+# DX@Scale release log
 
 Please note only major releases will be published. Hotfix release will be updated in individual repositories release notes.
 
