@@ -2,6 +2,64 @@
 
 Please note only major releases will be published. Hotfix release will be updated in individual repositories release notes.
 
+# February 22
+
+## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
+
+February 22 (v10.2.13) features the following fixes. We have also updated to the latest npm dependencies.
+
+## :beetle: Bug Fixes
+* fix: validation of artifact source repo by @aly76 in https://github.com/Accenture/sfpowerscripts/pull/812
+* fix(create-unlocked-package): provide valid error message when package creation is timing out by @azlam-abdulsalam in https://github.com/Accenture/sfpowerscripts/pull/832
+* fix(npm-scope): converts npm scope to lowercase during publish and fetch by @azlam-abdulsalam in https://github.com/Accenture/sfpowerscripts/pull/833
+
+
+
+**Full Changelog**: https://github.com/Accenture/sfpowerscripts/compare/@dxatscale/sfpowerscripts@9.3.6...@dxatscale/sfpowerscripts@10.2.0
+
+
+## [sfpowerkit](https://github.com/Accenture/sfpowerkit/)
+
+February 22 for sfpowerkit(v4.1.3) features the following changes.
+
+We have changed the way profile:reconcile works under the hood to make it more faster during bulk reconcile operation.  Please do let us know if there are any regressions, though we have taken all cares to test it. Refer to #629 #622.  We also have updated npm dependencies used by sfpowerkit in line with latest 'snyk|dependabot' reviews
+
+## ⭐  Enhancements
+* Enable Parallel Reconciling of Profiles by @azlam-abdulsalam in https://github.com/Accenture/sfpowerkit/pull/629
+
+## :beetle: Bug Fixes
+* Fix a typo on alias flag to fetch command in README.md file by @henry88lay in https://github.com/Accenture/sfpowerkit/pull/619
+* Refactor/eslint fixes by @henry88lay in https://github.com/Accenture/sfpowerkit/pull/621
+* Remove 'beta' from readme for sfpowerkit:source:apextest:list by @henry88lay in https://github.com/Accenture/sfpowerkit/pull/623
+* Fixed path/link for profile retrieve and reconcile by @jjminer in https://github.com/Accenture/sfpowerkit/pull/627
+* Refactor/style clean up by @henry88lay in https://github.com/Accenture/sfpowerkit/pull/628
+* Remove salesforce alm dependency by @henry88lay in https://github.com/Accenture/sfpowerkit/pull/630
+
+
+**Full Changelog**: https://github.com/Accenture/sfpowerkit/compare/v4.0.3...v4.1.3
+
+
+## [sfp-cli](https://github.com/Accenture/sfpowerscripts/tree/develop/packages/sfp-cli)
+
+We are releasing a beta version of the CLI for developers who utilizes DX@Scale in their projects. We hope this would simplify adoption of DX@Scale practices in your projects by combining git and sfdx into a single worflow
+
+
+## [docker-sfpowerscripts](https://github.com/dxatscale/docker-sfpowerscripts)
+
+
+Docker Images updated for February Release
+
+- sfdx-cli - 7.136.2
+- sfpowerscripts - 10.2.13
+- sfpowerkit - 4.1.3
+- sfdmu - 4.12.7
+- sfdx-browserforce-plugin - 2.8.0
+- vlocity - 1.14.19
+
+**Full Changelog**: https://github.com/dxatscale/docker-sfpowerscripts/compare/December21...February22
+
+
+
 # December 21
 
 # [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
