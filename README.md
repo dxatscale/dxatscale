@@ -7,7 +7,7 @@ Please note only major releases will be published. Hotfix release will be update
 
 ## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
 
-sfpowerscripts(v13.0.8) features the following
+sfpowerscripts(v13.0.9) features the following
 
 ## 💣  Breaking Changes
 - Changes to the SFDX CLI source tracking [#817](https://github.com/Accenture/sfpowerscripts/issues/817), Require sfdx-cli 7.144.2 and above. We now support the latest source tracking enhancements released by the salesforce cli team.
