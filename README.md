@@ -1,6 +1,87 @@
 # DX@Scale release log
 
+
 Please note only major releases will be published. Hotfix release will be updated in individual repositories release notes.
+
+# April 22
+
+## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
+
+sfpowerscripts(v13.0.8) features the following
+
+## 💣  Breaking Changes
+- Changes to the SFDX CLI source tracking [#817](https://github.com/Accenture/sfpowerscripts/issues/817), Require sfdx-cli 7.144.2 and above. We now support the latest source tracking enhancements released by the salesforce cli team.
+- We are migrating sfpowerscripts to utilize underlying libraries open source by salesforce cli team, as opposed to wrapping around cli commands. We have completed the migration for most of the areas. You can read more about it [here](https://github.com/Accenture/sfpowerscripts/blob/develop/decision%20records/004-cli-to-libs.md) 
+
+## ⭐  New Features
+ -  During validate, sfpowerscripts will automatically retry test class that fail in asynchronous mode to be executed synchronously. You can read the decision record on how it works [here]( https://github.com/Accenture/sfpowerscripts/blob/develop/decision%20records/validate/001-automated-apex-testing-retry.md)
+ - Introducing 'testSynchronous' , a new property which will let sfpowerscripts know that whether to execute a particular package in synchronous mode. This allows validation to be run in different modes for different packages
+ - Signed Docker Images served from ghcr.io. Read more on it [here](https://docs.dxatscale.io/v/release-april-22/projects/sfpowerscripts/docker-images)
+
+## ⭐  Enhancements
+
+- Add an option to Pool Configuration for scratch org creation time [#903](https://github.com/Accenture/sfpowerscripts/pull/903)
+- Add an environment variable SPFOWERSCRIPTS_DEFAULT_SHELL to select shell [#873](https://github.com/Accenture/sfpowerscripts/pull/873)
+- Clear code coverage and existing test result before test execution [#871](https://github.com/Accenture/sfpowerscripts/pull/871)
+- Add support for diffcheck parameter in validateAgainstOrg command [#800](https://github.com/Accenture/sfpowerscripts/issues/800)
+- Improved display of contents of a package [#553](https://github.com/Accenture/sfpowerscripts/issues/553)
+
+
+## :beetle: Bug Fixes
+
+- Display artifacts installed in the order of committed [#929](https://github.com/Accenture/sfpowerscripts/pull/929)
+- Remove unsupported entities from sfdx-project.json  [#921](https://github.com/Accenture/sfpowerscripts/pull/921)
+- Prepare command failing due timeout [#893](https://github.com/Accenture/sfpowerscripts/issues/893)
+- Override API version for unlocked and source package installation [#885](https://github.com/Accenture/sfpowerscripts/pull/885)
+- Error Plugin: `@dxatscale`/sfpowerscripts: Cannot find module 'node:process' [#874](https://github.com/Accenture/sfpowerscripts/issues/874)
+- Orchestrator Deploy Error TypeError: Cannot read properties of null (reading 'match') [#872](https://github.com/Accenture/sfpowerscripts/issues/872)
+- Fail to Install sfpowerscripts in a 'M1' powered Mackbook [#864](https://github.com/Accenture/sfpowerscripts/issues/864)
+- Fix for misleading error message for prepare cmd [#851](https://github.com/Accenture/sfpowerscripts/pull/851)
+- orchestrator validate step getting different code coverage from the same ci pool [#8[36](https://github.com/Accenture/sfpowerscripts/runs/5862610431?check_suite_focus=true#step:4:36)](https://github.com/Accenture/sfpowerscripts/issues/836)
+- Add support for api version in source convert [#884](https://github.com/Accenture/sfpowerscripts/pull/884)
+
+## [sfpowerkit](https://github.com/Accenture/sfpowerkit/)
+
+sfpowerkit (v4.2.5) features the following
+
+## Notice
+
+This version of sfpowerkit  continues to use better-sqlite to do caching during profile reconciliation. Due to usage of this dependency, while installing sfpowerkit, you need to have node-gyp installed on your docker image/machine.  Refer to issues #645 and #646. We are analyzing on  how we can better address this. PR's are welcome
+
+To install node-gyp, please follow the instructions here https://github.com/nodejs/node-gyp
+
+
+## ⭐  Enhancements
+*  Update in logger used to a simpler one, you will notice a change in the format and colors https://github.com/Accenture/sfpowerkit/pull/633
+* Ability to specify prefix for ScratchOrg's Aliases  https://github.com/Accenture/sfpowerkit/pull/648
+* Remove Requirement for MetadataAPI access in https://github.com/Accenture/sfpowerkit/issues/642. Thanks @yippie for raising this issue
+## :beetle: Bug Fixes
+* Fix for sfpowerkit:source:profile:reconcile -s fails with error: Cannot read property 'getUsername' of undefined https://github.com/Accenture/sfpowerkit/issues/637.  @busybox0  @lram-11
+
+**Full Changelog**: https://github.com/Accenture/sfpowerkit/compare/v4.1.5...v4.2.5
+
+
+## [docker-sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
+
+Docker Images are now published from sfpowerscripts repository. The recommended container registry going forward would be ghcr.io. You can read more about using the latest docker images [here](https://docs.dxatscale.io/v/release-april-22/projects/sfpowerscripts/docker-images)
+
+- sfdx-cli - 7.145.0
+- sfpowerscripts - 13.0.8
+- sfpowerkit - 4.2.5
+- pmd - 6.39.0
+- sfdmu - 4.13.0
+- vbt - 1.15.2
+- sfdx-browserforce-plugin - 2.8.0
+
+The images are available at the following address. https://github.com/orgs/dxatscale/packages/container/package/sfpowerscripts
+
+## [dxatscale-template](https://github.dev/dxatscale/dxatscale-template)
+
+DX@Scale templates (April-22) have the following updates
+
+- Utilize ghcr.io as the default registry
+- Change on authentication approach used in github templates (https://github.com/dxatscale/dxatscale-template/pull/21)
+
 
 # February 22
 
