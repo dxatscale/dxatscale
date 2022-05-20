@@ -3,6 +3,65 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# May 22
+
+## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
+
+sfpowerscripts(v13.6.16) features the following
+
+⭐ New Features
+- Introducing fast feedback mode, Now run your validation checks more faster by selectively deploying only the changed components of the package and triggering only the impacted test class. Read the decision record [here](https://github.com/Accenture/sfpowerscripts/blob/develop/decision%20records/validate/002-fast-feedback.md). You can turn on fast feedback by adding the --fastfeedback flag in the validate command. We believe this change along with upcoming changes in 'prepare' will ensure the validation experience remains performant.
+
+![image](https://user-images.githubusercontent.com/59901319/169443653-48a51288-4811-477c-88e4-3373bcb93cbc.png)
+
+
+- We would like to thank @nawforce for his amazing work on [apex-link](https://github.com/nawforce/apex-link) and [apex-parser](https://github.com/nawforce/apex-parser) which powers our apex related workflows.
+
+⭐ Enhancements
+- Minor enhancements to logging to be more descriptive especially with aliasified folders
+- Refactoring to core libs for easier maintenance
+
+🪲 Bug Fixes
+- fix paths to pre and post deployment scripts when executed without repository - [Fix #954](https://github.com/Accenture/sfpowerscripts/pull/954) 
+- support publishing artifacts greater than 5 MB - [Issue #967]( https://github.com/Accenture/sfpowerscripts/issues/967)
+- sfdx sfpowerscripts:orchestrator:prepare shows errors in GitHub-Action - [Issue #955](https://github.com/Accenture/sfpowerscripts/issues/955)
+- Fail to fetch requested information when query is too long - [Issue #860](https://github.com/Accenture/sfpowerscripts/issues/860)
+- Display folder used while deploying to an org in aliasified mode
+- Publish to tag packages that are successfully published even when other packages are failed
+- Fix log times to display milliseconds, when source packages are being built. It usually displays as 00:00:00
+
+:blue_book: [Full Change Log](https://github.com/Accenture/sfpowerscripts/compare/April22-2...@dxatscale/sfpowerscripts@13.6.16 ) 
+
+## [sfpowerkit](https://github.com/Accenture/sfpowerkit/)
+
+sfpowerkit (v4.2.8) features the following
+
+### Notice
+This version of sfpowerkit continues to use better-sqlite to do caching during profile reconciliation. Due to usage of this dependency, while installing sfpowerkit, you need to have node-gyp installed on your docker image/machine. Refer to issues [#645](https://github.com/Accenture/sfpowerkit/issues/645) and [#646](https://github.com/Accenture/sfpowerkit/issues/646). We are analyzing on how we can better address this. PR's are welcome
+
+To install **node-gyp**, please follow the instructions [here](https://github.com/nodejs/node-gyp).
+
+🪲 Bug Fixes
+- Fix reconcile for child metadata (e.g. Custom Fields) - [Issue #662](https://github.com/Accenture/sfpowerkit/issues/662)
+- Fix if some tags are not available
+- Fix where files with special characters were not merged properly - [Issue #583](https://github.com/Accenture/sfpowerkit/issues/583)
+- Fix where reconcile was removing a valid layout type - [Issue #669](https://github.com/Accenture/sfpowerkit/issues/669)
+
+## [docker-sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
+
+Docker Images are now published from sfpowerscripts repository. The recommended container registry going forward would be ghcr.io. You can read more about using the latest docker images [here](https://docs.dxatscale.io/v/release-may-22/projects/sfpowerscripts/docker-images).
+
+- sfdx-cli - 7.145.0
+- sfpowerscripts - 13.6.16
+- sfpowerkit - 4.2.8
+- pmd - 6.39.0
+- sfdmu - 4.13.0
+- vbt - 1.15.2
+- sfdx-browserforce-plugin - 2.8.0
+
+The images are available at the following [link](https://github.com/orgs/dxatscale/packages/container/package/sfpowerscripts). 
+
+
 # April 22
 
 ## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
