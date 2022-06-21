@@ -3,9 +3,41 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# June 22
+
+## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
+
+sfpowerscripts(v15.3.2) features the following
+
+## ⭐   New Feature
+
+- sfpowerscripts is now able to use multiple stages for prepare. This will help you to circumvent timeouts on cloud hosted agents of most ci/cd platforms. Read on more about the feature here https://docs.dxatscale.io/v/release-june-22/sfpowerscripts/orchestrator/prepare#using-prepare-in-multiple-stages. Also do check the decision record to understand the reasoning
+![image](https://user-images.githubusercontent.com/43767972/174704029-08f82cfb-40b6-4513-8e93-1bcc412c20d6.png)
+
+
+## ⭐   Enhancements
+
+- Return unused/rolled back scratch orgs to the pool [#989](https://github.com/dxatscale/sfpowerscripts/issues/989). For this enhancement to work, please ensure `sfpower-scratchorg-pool` package is updated. Read on the instruction on how to update [here](https://github.com/dxatscale/sfpower-scratchorg-pool#upgrading-from-110-1-to-200-1)
+- Add info about optimised deployment during deployment https://github.com/dxatscale/sfpowerscripts/pull/994
+- Add support for unpackaged metadata in unlocked packages [#958](https://github.com/dxatscale/sfpowerscripts/issues/958)
+- Ignore packages without a package name attribute [#842](https://github.com/dxatscale/sfpowerscripts/issues/842)
+- Log resolved package dependencies during build https://github.com/dxatscale/sfpowerscripts/pull/1058
+- Additional metrics for individual scratch orgs in pool. Check [metrics docs](https://docs.dxatscale.io/v/release-june-22/sfpowerscripts/metrics-and-dashboards) for details
+
+
+## :beetle: Bug Fixes
+- No clear error when package name exceeds 38 characters [#998](https://github.com/dxatscale/sfpowerscripts/issues/998)
+- Provide more descriptive error message when it is unable to compute diff during build [#965](https://github.com/dxatscale/sfpowerscripts/issues/965)
+- Warning message is not displayed when tests are skipped explicitly  [#919](https://github.com/dxatscale/sfpowerscripts/issues/919)
+- Incorrect Dependencies might be used during build stage [#496](https://github.com/dxatscale/sfpowerscripts/issues/496)
+- No Metrics while using fast feedback
+
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@13.6.22...@dxatscale/sfpowerscripts@15.3.2
+
 # May 22
 
-## [sfpowerscripts](https://github.com/Accenture/sfpowerscripts/)
+## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
 
 sfpowerscripts(v13.6.16) features the following
 
