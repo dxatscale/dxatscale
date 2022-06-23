@@ -11,7 +11,7 @@ sfpowerscripts(v15.3.2) features the following
 
 ## ⭐   New Feature
 
-- sfpowerscripts is now able to use multiple stages for prepare. This will help you to circumvent timeouts on cloud hosted agents of most ci/cd platforms. Read on more about the feature here https://docs.dxatscale.io/v/release-june-22/sfpowerscripts/orchestrator/prepare#using-prepare-in-multiple-stages. Also do check the decision record to understand the reasoning
+- sfpowerscripts is now able to use multiple stages for prepare. This will help you to circumvent timeouts on cloud hosted agents of most ci/cd platforms. Read on more about the feature [here](https://docs.dxatscale.io/v/release-june-22/sfpowerscripts/orchestrator/prepare#using-prepare-in-multiple-stages).  <br><br>Also check the [decision record](https://github.com/dxatscale/sfpowerscripts/blob/main/decision%20records/prepare/002-prepare-daisy-chaining.md) to understand the reasoning.<br><br>
 ![image](https://user-images.githubusercontent.com/43767972/174704029-08f82cfb-40b6-4513-8e93-1bcc412c20d6.png)
 
 
@@ -31,6 +31,9 @@ sfpowerscripts(v15.3.2) features the following
 - Warning message is not displayed when tests are skipped explicitly  [#919](https://github.com/dxatscale/sfpowerscripts/issues/919)
 - Incorrect Dependencies might be used during build stage [#496](https://github.com/dxatscale/sfpowerscripts/issues/496)
 - No Metrics while using fast feedback
+
+## :heavy_exclamation_mark: Deprecation Warning
+- Docker Images are now published and maintained in sfpowerscripts repository. Ensure that you update your ci/cd templates to reference the [github registry container](https://github.com/dxatscale/sfpowerscripts/pkgs/container/sfpowerscripts) going forward.  Future releases will no longer support [docker hub container](https://hub.docker.com/r/dxatscale/sfpowerscripts) updates and potentially remove it completely.
 
 
 **Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@13.6.22...@dxatscale/sfpowerscripts@15.3.2
