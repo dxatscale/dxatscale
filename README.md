@@ -38,6 +38,12 @@ sfpowerscripts(v15.3.2) features the following
 
 **Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@13.6.22...@dxatscale/sfpowerscripts@15.3.2
 
+
+## [sfp-cli](https://github.com/dxatscale/sfp-cli/)
+
+sfp-cli(v3.1.0) updated with several bug fixes and added a shortcut to force push changes to the org
+
+
 # May 22
 
 ## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
