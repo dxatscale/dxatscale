@@ -3,6 +3,33 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# July 22
+
+## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
+
+## :star: New Features
+![image](https://user-images.githubusercontent.com/43767972/180698282-75b9a719-8585-4722-b6c2-853bc476eaea.png)
+
+- Handle Entitlements with ease, sfpowerscripts now feature a smart entitlement filtering. To read more on how it works. Follow the link [here](https://medium.com/@gnemiq/salesforce-entitlement-handling-9e69735e3687) . Thanks @MengSQi for helping us with the implementation
+- Support .NEXT for Source/Data Packages [#1065](https://github.com/dxatscale/sfpowerscripts/issues/1065).  .NEXT will be replaced by build number during the build of source/data packages. This would remove the validation errors when you have forgotten to set the last digit as '0'
+- Hooks for "Prepare" command via scripts [#991](https://github.com/dxatscale/sfpowerscripts/issues/991). This allows to tweak the prepared scratch orgs further. Read more [here](https://docs.dxatscale.io/v/release-july-22/sfpowerscripts/orchestrator/prepare#executing-a-custom-script) 
+- **[BETA Feature]** Now generate release definition based on a source org. Try this [command](https://docs.dxatscale.io/sfpowerscripts/command-glossary#sfdx-sfpowerscripts-releasedefinition-generate-n-less-than-string-greater-than-or-n-less-than-string) out and keep the feedbacks coming. 
+![image](https://user-images.githubusercontent.com/43767972/180698890-6395a2aa-8ef5-4df4-9d1e-1ec5988de275.png)
+
+## :beetle: Bug Fixes
+- Fix for #1075  skipTesting is not respected when optimizedDeployment is false. Thanks to @sumanth-bolledla-acn  for the extensive tests on this one
+- Fix for #942  scratch org creation now supports ObjectSettings
+- Fix for #1085 Downgrade sfdx data plugin to 2.0.0 in docker image 
+- Fix for #1086 to changelog: generate command 
+
+## ⚠️  Local Installation Advice (if not using docker)
+We have migrated the  underlying libraries to utilize **@salesforce/core v3 and @jsforce: 2.0.0**. Please uninstall existing plugin before installing the newer version.
+
+
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@15.3.2...@dxatscale/sfpowerscripts@18.1.5
+
+
 # June 22
 
 ## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
