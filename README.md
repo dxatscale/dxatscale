@@ -3,6 +3,71 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# August 22
+
+## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
+
+## :star: New Features
+
+-  **Generate Release Definition  Automatically**
+
+Last release we announced a beta version of 'releasedefinition:generate'. While the idea was solid, the command lacked flexibility and it was put back to the drawing board. This release we have created a whole new of way interacting with the command. Read more about it in the descision record [here](https://github.com/dxatscale/sfpowerscripts/blob/b644a3c8de458b39f6e0a6174255b3b1d54da85f/decision%20records/release/006-release-defn-generator.md) .  Documentation is updated on how to use this command as well. Check out the link [here](https://docs.dxatscale.io/sfpowerscripts/release/release-definition-generator). Thanks to @Schuchie  for the feedback
+
+- **Support for Distinct Scratch Org Definitions**
+
+You might need to use this feature very rarely, but if the need arises, you have it. This feature allows a user to specify a unique scratch org config file for building a package. When the feature is enabled and the package name is matched, the build command will use specified config file for that package. Read more about it [here](https://docs.dxatscale.io/sfpowerscripts/build-and-quick-build#distinct-scratch-org-definition)
+
+## :star: Enhancements
+
+- **Enhanced Package Dependencies Installation**
+
+sfpowerscripts no longer utilise the 'sfpowerkit:package:dependencies:install' to install dependencies. A new implementation is being utilised by validate/prepare/release commands. This command utilise the same dependency resolver used by package and removes lot of technical debt. 
+
+- **Change in dependencies installation order**
+
+validate will no longer install all the external dependencies upfront.  External dependencies will only be installed if the required package has to be validated and it will be installed just in time. This will make help with further increasing the speed of validate especially in thorough mode and change in package dependencies
+
+
+- **Skip package installations if a higher version is already installed**
+
+sfpowerscripts will now skip external dependencies such as managed package thats gets automatically upgraded in the target org.  Unfortunately this can only work after noticing a failed installation in the org and reading the error message. Read more about the discussion here (https://github.com/dxatscale/sfpowerkit/issues/602)
+
+```
+Installing Package Salesforce CPQ in buildbot@dxatscale.io.hotfix
+A higher version of this package is already installed and can't be downgraded, skipping
+```
+
+- **Add support for multiple work item filters in changelog**
+
+Release definition files now support  multiple work item filters, using the `workItemFilters', which expect an array of regex pattern filters. The changelog will pick up work items that match all the patterns
+
+
+## :beetle: Bug Fixes
+
+* We have fixed few internal defects as well
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@18.1.5...@dxatscale/sfpowerscripts@19.4.1
+
+
+## [sfpowerkit](https://github.com/dxatscale/sfpowerkit)
+
+sfpowerkit (v5.0.0) features the following
+
+## :beetle: Bug Fixes
+* fix: Issue #713 where profile:reconcile was removing <userLicense> tag incorrectly by @genoud in https://github.com/dxatscale/sfpowerkit/pull/715
+* fix: Issue #694 impacting tab visibilities on profile:reconcile command  by @genoud in https://github.com/dxatscale/sfpowerkit/pull/711
+* fix: Issue #727 where permissions for VF pages were returning an error for the profile:merge command by @VertikaGoyal
+* fix: Issue #729 where a scratch org alias is not returned to be used in script execution 
+
+## :warning: Deprecation 
+sfpowerkit:org:manifest:build is deprecated in this release and will no longer be supported as per deprecation notice here: https://github.com/dxatscale/sfpowerkit/issues/644 
+
+## Contributors
+* @VertikaGoyal made their first contribution in https://github.com/dxatscale/sfpowerkit/pull/727 :eyes: :eyes: :boom:
+* @genoud as always, the profile master has saved the day :balloon: :tada:
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerkit/compare/v4.2.13...v4.2.14
+
 # July 22
 
 ## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
