@@ -3,6 +3,61 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# September 22
+
+## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
+
+sfpowerscripts(v19.7.3) features the following
+
+## :star: New Features
+
+-  **Support for multiple release definitions**
+   
+   Release command now supports multiple release definition as input. This allows a release manager to composite releases from different domains more easily and release them in a single transaction.
+
+
+## :star: Enhancements
+
+-  **Ability to skip all external package dependencies while generating a release definition** 
+
+     When you are generating release definitions using multiple filters to composited later, external package dependencies might get repeated and it may also not be required for every files. Now release definition generator have an additional parameter 
+ ```excludeAllPackageDependencies:<boolean>``` to skip package dependencies being added to  generated release defnitions.
+
+-  **Utilize sfdx cli docker image as the base and minor docker improvements**
+      
+     We are switching to utilising sfdx-cli as the base docker image. This reduces the image size and provides better stability in fixating on the version of the cli
+
+-  **Makes logs more concise and easy to read**
+   
+     Logs have been made much more concise to read and interpret in various commands. This will help in readability 
+
+-  **Auto Log Grouping**
+
+    Logs are now automatically grouped for Github Actions, Gitlab, Buildkite and Azure Pipelines even if the '-g (loggroup)' flag is not used
+
+## :beetle: Bug Fixes
+
+-  **Release fails if its unable to push a changelog**
+-  **If 2 failing test methods have the same name, they get removed from test results (#1111)**  Thanks @Chiqqn and @domrycz  for raising the issue and fixing the same
+-  **Incorrect Error Handling on Deployment Failure during validate (#1123)**  
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@19.4.1...@dxatscale/sfpowerscripts@19.7.3
+
+## [sfpowerkit](https://github.com/dxatscale/sfpowerkit)
+
+sfpowerkit(v6.0.0) features the following
+
+## :warning: Deprecation 
+sfpowerkit:org:destruct is deprecated in this release and will no longer be supported as per deprecation notice here: https://github.com/dxatscale/sfpowerkit/issues/722 
+
+## :beetle: Bug Fixes
+* Remove typo from help command for sfdx sfpowerkit:source:profile:merge fixes in issue https://github.com/dxatscale/sfpowerkit/issues/693
+
+## New Contributors
+* @davidzheng1310 made their first contribution. Thanks David!! :dancer: :boom:
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerkit/compare/v5.0.0...v6.0.0
+
 # August 22
 
 ## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
