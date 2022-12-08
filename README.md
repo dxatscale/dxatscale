@@ -3,6 +3,78 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# November 22
+
+## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
+
+sfpowerscripts(v20.2.6) features the following
+
+## 💣  Breaking Changes
+
+-  **Additional new modes for validate command [#1133]** 
+
+We heard you loud and clear, that you need flexibility with validate command depending on the type of repository and project configuration.  On some projects you would need to limit your validation boundary, only validate a changed package etc, we support it all. Read more [here](https://docs.dxatscale.io/v/release-november-22/sfpowerscripts/validate#validate-modes).
+
+Unfortunately, that means we had to break up the command line parameters, a new flag called mode is added (defaults to thorough) to access other modes
+
+-  **NPM Scope Names [#1168]** 
+
+This release breaks the behaviour of how we handle scope names for NPM Package Registries. Please review and update your YAML configuration files in your pipelines if you encounter any issues authenticating to your package registry with the scope using the '@' and remove the '@' prefix as needed in your environment variables to ensure orchestrator commands execute successfully.  We are working to bring back functionality to handle this and make it uniform across platforms in the near future.
+
+## :star: New Features
+
+- **Create pools with a set of specified artifacts[#978]**
+
+Utilize [release config](https://docs.dxatscale.io/v/release-november-22/sfpowerscripts/release/release-definition-generator#config-file) to limit the artifacts installed in scratch orgs and use the same in validate command. We would also like to thank @domrycz  for  contributing majority code for the feature and testing the early releases
+
+
+- ****[Beta]** '~~validate' to identify~~ fix incorrect transitive dependencies [#855](https://github.com/dxatscale/sfpowerscripts/issues/855).** 
+
+Add  enableTransitiveDependencyResolver:true, to the plugins section of sfdx-project.json will enable this feature. 
+
+```
+ "plugins": {
+        "sfpowerscripts": {
+            enableTransitiveDependencyResolver:true // enable transitive dependency resolution 
+            "ignoreFiles": {
+                "prepare": ".forceignore",
+                "validate": ".forceignore",
+                "quickbuild": "forceignores/.quickbuildignore",
+                "build": "forceignores/.buildignore"
+            }
+        }
+    }
+
+```
+
+- **Utilize packaging lib for all package related operations, this removes the dependency on sfdx-cli  [#1121](https://github.com/dxatscale/sfpowerscripts/issues/1121).**
+
+
+## :star: Enhancements
+- Prepare command creates too many Scratch Orgs when using snapshot pool [#1105](https://github.com/dxatscale/sfpowerscripts/issues/1105)  Thanks  @domrycz  for figuring out the missed scenario
+
+
+## :beetle: Bug Fixes
+
+- Issue when publishing "big" artifacts [#1149](https://github.com/dxatscale/sfpowerscripts/issues/1149). Thanks to @alanjaouen for raising the issue as well as PR to fix it
+- Artifacts aren't pulled correctly releasedefinition:generate [#1140](https://github.com/dxatscale/sfpowerscripts/issues/1140) @Schuchie 
+- Scratch Org Pool creation script failing "Unable to execute command .. Error: Can't find package id for dependency: 04txxxx" [#1113](https://github.com/dxatscale/sfpowerscripts/issues/1113)[eneag-sf] @eneag-sf
+- Update core libs to fix 'org not found' issues during lengthy deployments
+
+Full Change Log: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@19.7.3...@dxatscale/sfpowerscripts@20.2.6
+
+## [sfpowerkit](https://github.com/dxatscale/sfpowerkit)
+
+sfpowerkit(v6.0.1) features the following
+
+## What's Changed
+* [#744]-Getting text 'Config folder does not exists, Creating Folder' with --json param by @VertikaGoyal in https://github.com/dxatscale/sfpowerkit/pull/745
+
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerkit/compare/v6.0.0...v6.0.1
+
+
+
 # September 22
 
 ## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
