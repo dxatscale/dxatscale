@@ -3,6 +3,73 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# January 23
+
+## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
+
+First release of 2023 is out (v20.19.6) and is packed with goodies. Read  about the new features/enhancements and bug fixes. We hope it improves your dx@scale experience significantly.  
+
+## :star: New Features
+
+- sfpowerscripts now support for declarative field history tracking and feed tracking. Read more on how to use this feature [here](https://docs.dxatscale.io/sfpowerscripts/metadata-specific-support)  @MengAQi  has written a blog which details more on how this functionality work under the hoods. Check out the article [here](https://medium.com/@gnemiq/declarative-configuration-for-field-history-tracking-d63525a5e7b2)
+-  Missed declaring a package dependency? sfpowerscripts now feature a transitive dependency resolution which fills in the gaps.  Don't like it, use ``disableTransitiveDependencyResolver:false`` to turn this feature off.  Read more about the feature here
+      ```
+      "plugins": {
+              "sfpowerscripts": {
+                  "disableTransitiveDependencyResolver": true
+              }
+      ```
+-  3 New additional commands to help with dependency management, with more enhancements slated for upcoming releases. These commands are in the dependency topic 
+
+| Commmand            | Description                                                                                                                                       |   
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| dependency: expand   | Expand the dependency list in sfdx-project.json file for each package, fix the gap of dependencies from its dependent packages                    |   
+| dependency: shrink   | Shrink the dependency list in sfdx-project.json file for each package, remove duplicate dependencies that already exist in its dependent packages |   
+| dependency: install | Install all the external dependencies of a given project                                                                                          |  
+
+
+## :star: Enhancements
+
+- Add support for sfpowerscripts orchestrator extensions to unlocked packages [#1204](https://github.com/dxatscale/sfpowerscripts/issues/1204)
+- Additional parameters to pre/post script to manipulate contents of a package [#1196](https://github.com/dxatscale/sfpowerscripts/issues/1196)
+- Publish command to push only packages version tags [#1183](https://github.com/dxatscale/sfpowerscripts/issues/1183)
+- Create scratch orgs in parallel during prepare [#1142](https://github.com/dxatscale/sfpowerscripts/issues/1142)
+- More concise logs, by removing borders around tables
+
+## :beetle: Bug Fixes
+
+- pool. Available metrics not reporting poolname [#1214](https://github.com/dxatscale/sfpowerscripts/issues/1214)
+- Unpackaged metadata not provided to sfdx build in newest sfpowerscripts version [#1202](https://github.com/dxatscale/sfpowerscripts/issues/1202)
+- GitLab NPM Scope adds second @ in orchestrator:release [#1200](https://github.com/dxatscale/sfpowerscripts/issues/1200)
+- releasedefinition:generate does not generate "promotePackagesBeforeDeploymentToOrg" attributes correctly to Release Definition File [#1180](https://github.com/dxatscale/sfpowerscripts/issues/1180)
+- Quickbuild command is not respecting .forceIgnore specific file [#1178](https://github.com/dxatscale/sfpowerscripts/issues/1178)
+- Publish command tags HEAD instead of artifact commit ID [#983](https://github.com/dxatscale/sfpowerscripts/issues/983)
+
+
+## New Contributors
+* @gz77a made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1181
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@20.2.11...@dxatscale/sfpowerscripts@20.19.6
+
+## [sfpowerkit](https://github.com/dxatscale/sfpowerkit)
+
+sfpowerkit(v6.1.0) - January 23
+
+## :boom: Deprecation Notice - March 2023
+Added deprecation notice on commands as sfpowerkit is being discontinued in March 2023 completely. Please keep an eye on the repo for alternate suggestions and commands
+
+## [Craft-First](https://github.com/Craft-First)
+
+Craft-first is a collection of open source production ready libraries and frameworks built on our experience in delivering large and complex Salesforce programs.
+
+We are excited to release our first set of Open Source Frameworks that can be leveraged on your Salesforce Programs. Please feel free to use them on your new green field projects and/or retrofit it in your existing orgs.
+
+## :new: Frameworks
+- [Lightweight trigger framework](https://github.com/Craft-First/sfdc-trigger-framework) - Lightweight metadata driven trigger framework for Salesforce.
+- [Trigger Bypass Strategy](https://github.com/Craft-First/sfdc-trigger-bypass-strategy) - This package implements a simple bypass strategy for the [sfdc-trigger-framework](https://github.com/Craft-First/sfdc-trigger-framework) based on a custom setting to define whether or not a specific trigger handler should be bypassed.
+- [Feature Management Library for Salesforce](https://github.com/Craft-First/sfdc-feature-management) - This library provides a consistent way to check if a given feature is enabled in Salesforce.
+
+
 # November 22
 
 ## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
