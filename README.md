@@ -5,6 +5,17 @@ Please note only major releases will be published. Hotfix releases will be updat
 
 # January 23
 
+## [Craft-First](https://github.com/Craft-First)
+
+Craft-first is a collection of open source production ready libraries and frameworks built on our experience in delivering large and complex Salesforce programs.
+
+We are excited to release our first set of Open Source Frameworks that can be leveraged on your Salesforce Programs. Please feel free to use them on your new green field projects and/or retrofit it in your existing orgs.
+
+## :new: Frameworks
+- [Lightweight trigger framework](https://github.com/Craft-First/sfdc-trigger-framework) - Lightweight metadata driven trigger framework for Salesforce.
+- [Trigger Bypass Strategy](https://github.com/Craft-First/sfdc-trigger-bypass-strategy) - This package implements a simple bypass strategy for the [sfdc-trigger-framework](https://github.com/Craft-First/sfdc-trigger-framework) based on a custom setting to define whether or not a specific trigger handler should be bypassed.
+- [Feature Management Library for Salesforce](https://github.com/Craft-First/sfdc-feature-management) - This library provides a consistent way to check if a given feature is enabled in Salesforce.
+
 ## [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts/)
 
 First release of 2023 is out (v20.19.6) and is packed with goodies. Read  about the new features/enhancements and bug fixes. We hope it improves your dx@scale experience significantly.  
@@ -57,17 +68,6 @@ sfpowerkit(v6.1.0) - January 23
 
 ## :boom: Deprecation Notice - March 2023
 Added deprecation notice on commands as sfpowerkit is being discontinued in March 2023 completely. Please keep an eye on the repo for alternate suggestions and commands
-
-## [Craft-First](https://github.com/Craft-First)
-
-Craft-first is a collection of open source production ready libraries and frameworks built on our experience in delivering large and complex Salesforce programs.
-
-We are excited to release our first set of Open Source Frameworks that can be leveraged on your Salesforce Programs. Please feel free to use them on your new green field projects and/or retrofit it in your existing orgs.
-
-## :new: Frameworks
-- [Lightweight trigger framework](https://github.com/Craft-First/sfdc-trigger-framework) - Lightweight metadata driven trigger framework for Salesforce.
-- [Trigger Bypass Strategy](https://github.com/Craft-First/sfdc-trigger-bypass-strategy) - This package implements a simple bypass strategy for the [sfdc-trigger-framework](https://github.com/Craft-First/sfdc-trigger-framework) based on a custom setting to define whether or not a specific trigger handler should be bypassed.
-- [Feature Management Library for Salesforce](https://github.com/Craft-First/sfdc-feature-management) - This library provides a consistent way to check if a given feature is enabled in Salesforce.
 
 
 # November 22
