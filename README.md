@@ -3,6 +3,102 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# March 23
+
+## dxatscale-template
+
+## :star: New Featured (Beta)
+- **feat(VS Code Tasks): New [VS Code Tasks](https://github.com/dxatscale/dxatscale-template/pull/28) to improve user experience for DX@Scale **.  New tasks for **Fetch new Scratch Org** and **Pull your changes from the Scratch Org** are available to be tested.  Any feedbacks or contributions back to improving the tasks are welcomed from the community.  
+- To start using, clone the latest main branch and go to **Command Palette** and enter `>Tasks: Run Task` and select one of the new tasks.
+- Thanks to @eneag-sf for the contributions.
+
+## sfpowerscripts
+
+sfpowerscripts (v20.30.3) introduces the following  new features more towards bringing release configuration everywhere. Release configuration can now be applied in prepare, build and deploy providing more flexibility  especially when you have multiple independent teams 
+
+## :star: New Features
+- **feat(deploy): deploy to support release config**  https://github.com/dxatscale/sfpowerscripts/pull/1264
+
+Deploy command now has an option to support release config, Thanks @alanjaouen  for providing a detailed analysis on why this is required
+
+<img width="811" alt="image" src="https://user-images.githubusercontent.com/43767972/229249266-32b818dc-5fda-4257-bb5b-c5c5ddec8e0a.png">
+
+-  **feat(build): add support for release config to build**  https://github.com/dxatscale/sfpowerscripts/pull/1272
+-  **feat(deploy): enable source tracking support for deploy command** https://github.com/dxatscale/sfpowerscripts/pull/1273
+-  **feat(publish): Add new flag to delete Git tags by age and limit minimum** https://github.com/dxatscale/sfpowerscripts/pull/1275
+
+## :beetle: Bug Fixes
+* fix(prepare): ensure prepare in build mode respects releaseconfig by @azlam-abdulsalam in https://github.com/dxatscale/sfpowerscripts/pull/1281
+* fix(delete): Fix typo in message for when no Scratch Orgs are found by @JoeffreyChaucer in https://github.com/dxatscale/sfpowerscripts/pull/1283
+* fix(fetch): SFDX Org List recognizes fetched scratch orgs as non-scratch orgs. Thanks @petter-eikeland  for following it up.
+
+## New Contributors
+* @JoeffreyChaucer made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1275
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@20.26.3...@dxatscale/sfpowerscripts@20.30.3
+
+# February 23
+
+## sfpowerscripts
+
+
+February 23(v20.26.2) is all about quality of life improvements! We believe these enhancements will make your experience a bit more friendly.
+
+
+## :star: New Features
+
+- **feat(validate): display info about the org that is used for validation** [#1239](https://github.com/dxatscale/sfpowerscripts/pull/1239)
+
+Displays information about the org that is used for validation.  Use `--orginfo`  flag to  display information to authenticate to the org that is  being currently used by the validate job. If you are using -x flag, the information is valid only during the life of the current running job
+
+![image](https://user-images.githubusercontent.com/43767972/222339994-bf519c4c-30f8-4626-b46f-53cb39e3a5e9.png)
+
+
+- **feat(validate): disable parallel testing using a flag** [#1255](https://github.com/dxatscale/sfpowerscripts/pull/1255)
+
+Now you can disable parallel testing during validate across all packages using a new flag in `--disableparalleltesting`. Useful for scenarios when you are running full suite of tests across all the packages in a repo such as in nightly jobs and where do you need that additional consistency.   This is also quite useful when you are recfactoring into writing better tests
+
+- **feat(validate): disable source package override in validate commands [#1240]**
+
+Use `--disablesourcepkgoverride` in validate to build and install unlocked packages in your project as such, instead of using source packages (metadata api) while validating your packages. This will give you more accurate behaviour especially when used on a sandbox. (validateAgainstOrg). 
+
+- **feat(pool): recover orphaned scratch orgs** [#1234](https://github.com/dxatscale/sfpowerscripts/pull/1234)
+
+sfpowerscripts will not utilize the description field of ScratchOrgInfo object to identify scratch orgs that are created.  Using this information, the `pool: delete` command  when coupled with `--orphans` flag can help you delete scratch orgs that were created but never got associated to any pools. The output is also prettified by classifying the operation
+
+![image](https://user-images.githubusercontent.com/43767972/222340600-48a0da37-4de4-43b7-b47d-866e88b6fd0c.png)
+
+- **feat(prepare):  Add the ability to increment retry counts in prepare** [#1233]
+
+You can attempt more retries for packages installation in prepare by adding a   ``maxRetryCount`` in your pool config. sfpowerscripts will now retry the package installation  the number of times specified by this option.  By default it always attempt for 2 installations during prepare
+
+- feat(fetch) :  Display error messages when  fetching dev Scratch Org Pool in different git Repository for sfdx Project [#1251]
+- feat(prepare):  prevent from downloading / creating artifacts that are not used while preparing without installAll  [#1223](https://github.com/dxatscale/sfpowerscripts/pull/1223)
+
+## :beetle: Bug Fixes
+
+- fix(validate):  fix for validate  failing  in individual mode due to missing dependencies #1241
+- [fix(apextests): fix apex tests trigger crashing on unlocked packages](https://github.com/dxatscale/sfpowerscripts/commit/4fb3874de75b03cb75707aa7a1e0bb05f34d1b93)
+- fix(fetch): sfpowerscripts:pool:fetch --json returns non-json [#1254](https://github.com/dxatscale/sfpowerscripts/issues/1254)
+- fix(external-dependencies):  add support for detecting  package ids with 15 chars  and skipping it [#1244](https://github.com/dxatscale/sfpowerscripts/issues/1244)
+- fix(logs): add/remove misplaced spaces and typo [(https://github.com/dxatscale/sfpowerscripts/actions/runs/4310619443/jobs/7519233163#step:4:37)](https://github.com/dxatscale/sfpowerscripts/pull/1236)
+- fix(logs): add/remove misplaced spaces [#1231](https://github.com/dxatscale/sfpowerscripts/pull/1231)
+- fix(logs): fix typo on promote message in release/deploy
+
+## sfp-cli
+
+We are reviving sfp-cli, as a unified cli for sfpowerscripts and other functionality to come.  The repository is migrated to the sfpowerscripts repository and is operated as a project in the same mono repository space. The current version is still incredibly early in development, and we will be pushing in changes faster to stabilize.
+
+⚠️ Warning
+sfp-cli is still unstable and is not recommended to be in use as a daily driver. Rest assured we are furiously working on it for making it prime time
+
+## :heart: Contributors
+
+We'd like to thank all the contributors who worked on this release!
+
+- [@michallachowski](https://github.com/michallachowski)
+- [@alanjaouen](https://github.com/alanjaouen)
+
 # January 23
 
 ## [Craft-First](https://github.com/Craft-First)
