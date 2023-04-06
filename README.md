@@ -7,7 +7,7 @@ Please note only major releases will be published. Hotfix releases will be updat
 
 ## dxatscale-template
 
-## :star: New Featured (Beta)
+## :star: New Features (Beta)
 - **feat(VS Code Tasks): New [VS Code Tasks](https://github.com/dxatscale/dxatscale-template/pull/28) to improve user experience for DX@Scale **.  New tasks for **Fetch new Scratch Org** and **Pull your changes from the Scratch Org** are available to be tested.  Any feedbacks or contributions back to improving the tasks are welcomed from the community.  
 - To start using, clone the latest main branch and go to **Command Palette** and enter `>Tasks: Run Task` and select one of the new tasks.
 - Thanks to @eneag-sf for the contributions.
