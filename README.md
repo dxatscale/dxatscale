@@ -3,6 +3,92 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# June 23
+
+## dxatscale-template
+
+All the templates have been updated to use the new sf plugin and also revised with breaking changes in sfpowerscripts, where sfpowerscripts is no longer a sfdx plugin and has to be used as direct cli command
+
+## sfpowerscripts
+
+sfpowerscripts v22.5.5  features the following 
+
+## 💣 Breaking Change ##
+
+### Transition from sfdx plugin to npm module:
+
+sfpowerscripts has transitioned from a Salesforce DX plugin to an npm module. It should now be installed using the command` npm i -g @dxatscale/sfpowerscripts.` The commands can be used directly, e.g.` sfpowerscripts orchestrator:build ---`. For a shorter alias, use sfp instead of sfpowerscripts.
+
+### sfpowerscripts is now independent of sfpowerkit
+
+The new sfpowerscripts no longer relies on sfpowerkit for functionality. Any functionality that sfpowerscripts used to depend on sfpowerkit has been ported over.
+
+### Deprecations
+
+- This version discontinues the sfp-cli due to low usage. 
+- The commands sfpowerscripts analyze:pmd and sfpowerscripts package:valid are no longer available. 
+-  vbt cli is no longer available in the docker image
+
+
+## Enhancements
+
+**Support for Picklist Deployment**
+
+sfpowerscripts now supports picklist deployment. This feature addresses Salesforce's limitation of not allowing picklist values to be deployed during unlocked package upgrades.  Read more about it here https://medium.com/@gnemiq/deploy-picklists-from-unlocked-packages-102c1366664f
+
+**Support for Branches in package depdency** (https://github.com/dxatscale/sfpowerscripts/issues/1270 )
+
+sfpowerscripts now supports branch attributes in dependencies, picking up the right dependencies of external packages from the right branches when being installed
+
+
+
+**Introduction of a 'Diff' Package Type**
+
+sfpowerscripts now offers a 'Diff' package type designed to facilitate organizations' transition from a monolithic structure to a modular DX@Scale model. A Diff package captures the differences in unpackaged metadata from the previous deployment, deploying only the delta. This approach allows unpackaged sections of the project to be deployed alongside packaged modules in a controlled manner . 
+
+Please note, this feature is still in early development, Please reach out if you have queries on how to use it
+
+
+## :beetle: Bug Fixes
+
+* fix(apexlink): direct conversion to json breaks on large packages by @azlam-abdulsalam in https://github.com/dxatscale/sfpowerscripts/pull/1306
+* fix(schema):  new attributes in sfdx-project.json will result in warning as opposed to errors https://github.com/dxatscale/sfpowerscripts/issues/1329
+* fix(orginfo): add front door display url to logint to the sandbox (https://github.com/dxatscale/sfpowerscripts/commit/0562998b25f480e6d8d0050ea0902d31ff250906)
+* fix(analyzer): display the analyzer being used in pre/post analyzers 
+* fix(sfpowerscripts):  validate not reporting additional tags
+Validate and validateAgainstOrg was not reporting metrics correctly,  as it was not hooked up with proper events. This  change request fixes the same and also passes in release config
+
+
+
+
+## New Contributors
+* @marcelosousa made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1319
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@21.1.0...@dxatscale/sfpowerscripts@22.5.5
+
+
+
+
+# April 23
+
+## sfpowerscripts
+
+sfpowerscripts (v21.1.0) features the following changes
+
+💣 Breaking Change
+validate command will now respect aliasified packages. This means aliasified packages which do not have a default directory will fail during validation. To fix this, either ignore the package or add a default directory to the aliasified package which is the contents that you want to deploy to the scratch origin
+
+Enhancements
+feat(validate): validate will no longer display deployment options #1295
+feat(metrics): new splunk metrics sender by @Rocko1204 in #1297
+🪲 Bug Fixes
+fix(links): add $schema properties #1203
+fix(fht): rollbackOnError need to be true for production #1299
+fix(validate): aliasified packages are ignored in validate by #1293
+New Contributors
+@Rocko1204 made their first contribution in #1297
+Full Changelog: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@20.30.4...@dxatscale/sfpowerscripts@21.1.0
+
 # March 23
 
 ## dxatscale-template
