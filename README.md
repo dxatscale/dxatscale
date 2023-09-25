@@ -3,6 +3,76 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# August 23
+
+## sfpowerscripts
+
+**August23 (v24.5.0)** features the following
+
+Update to the the docker image is the key highlight for this release, We have started using ubuntu 22 as the base image as opposed to Salesforce CLI base image, due to the root issue as discussed in #1409.  Finally, profile merge/retrieve makes a comeback and is available in sfp. Now you can really deprecate sfpowerkit :)
+
+## :star: New Features
+
+-  feat:(profiles) profile merge and retrieve is reintroduced to sfp  https://github.com/dxatscale/sfpowerscripts/pull/1353
+-  feat(output)   sfp features more richer output in .sfpowerscripts/logs folder in markdown formats,  This is a work in progress feature which enables one to link markdown formatted output to your CI/CD platforms or notification platforms like Slack or Teams
+
+## :beetle: Bug Fixes
+* fix(schema): update schema to remove warning around seedMetadata  https://github.com/dxatscale/sfpowerscripts/pull/1400
+* fix(package): install using v58.0 PackageInstallRequest parameters https://github.com/dxatscale/sfpowerscripts/pull/1370
+* fix(pool): enable json flag for pool fetch command   https://github.com/dxatscale/sfpowerscripts/pull/1404
+* fix(docker):use lower uid in dockerfiles   https://github.com/dxatscale/sfpowerscripts/pull/1409
+* fix(apextests): handle conditions where test results are inaccurate from salesforce 
+*  fix(diff): throw error if an associated meta  file is missing in repository such as *.meta-xml for a changed file such as .cls
+*  fix(diff): diff package not correctly copying static resources
+
+
+## New Contributors
+* @ruslan-kurchenko made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1370
+* @nvuillam made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1401
+* @RobinWeymans made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1404
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@23.4.2...@dxatscale/sfpowerscripts@24.5.0
+
+## sfops
+
+sfops beta version is currently available to project sponsors. Head to https://docs.dxatscale.io/sfops/overview to learn more
+
+
+# July 23
+
+## sfpowerscripts
+
+July23(v23.4.2) features the following
+
+This release we focused mainly on updating to  v5 @salesforce/core and updating many of the dependencies (#1366 and #1388). This will help you close many of the issues that your security team has been pestering you with on deprecated dependencies. Though sfpowerscripts is not used in the context of web application and many vulnerabilities are not really applicable, updating to the latest dependencies reduces so much friction in usage in the enterprise.  
+
+Special thanks to @rygramer for the fantastic effort in raising issues which helped to fix these dependencies easily.
+Another contributor that needs a special mention is @petter-eikeland, who has taken additional effort to test Release Candiates.
+
+## :star: New Features
+
+- Enhancements to transitive dependency resolver to support multiple version [#1226](https://github.com/dxatscale/sfpowerscripts/issues/1226)
+
+## :beetle: Bug Fixes
+
+- PicklistAnalyzer errors out if other other non CustomField Metadata is processed first [#1367](https://github.com/dxatscale/sfpowerscripts/issues/1367)
+- Bad namespaced class names from apex-node break test retry logic [#1362](https://github.com/dxatscale/sfpowerscripts/issues/1362)
+- fix(triggerApexTests): second test run results are not merged [#1360](https://github.com/dxatscale/sfpowerscripts/pull/1360)
+- sfp orchestrator:validate with Code Coverage Validation  [#1359](https://github.com/dxatscale/sfpowerscripts/issues/1359)
+- validate fails to build package when fht is enabled during fast feedback mode [#1358](https://github.com/dxatscale/sfpowerscripts/issues/1358)
+- sfp orchestrator:build -  Language bug upon package version creation [#1[34](https://github.com/dxatscale/sfpowerscripts/actions/runs/5866568849/job/15905627412#step:4:35)7](https://github.com/dxatscale/sfpowerscripts/issues/1347)
+- orchestrator:release --dryrun still attempts to install packages [#13[40](https://github.com/dxatscale/sfpowerscripts/actions/runs/5866568849/job/15905627412#step:4:41)](https://github.com/dxatscale/sfpowerscripts/issues/1340)
+- orchestrator:build job removes too many packages from queue after single failure  [#1199](https://github.com/dxatscale/sfpowerscripts/issues/1199)
+
+## :heart: Contributors
+
+We'd like to thank all the contributors who worked on this release!
+
+- [@Schuchie](https://github.com/Schuchie)
+- [@rygramer](https://github.com/Rygramer)
+- [@JonnyPower](https://github.com/JonnyPower)
+
+
 # June 23
 
 ## dxatscale-template
