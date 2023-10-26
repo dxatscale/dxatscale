@@ -38,10 +38,6 @@ Thanks to @rody, @thraco, @ethan-sargent, @cjbradshaw for your contributions in 
 
 sfops beta version is currently available to project sponsors. Head to https://docs.dxatscale.io/sfops/overview to learn more
 
-
-**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@23.4.2...@dxatscale/sfpowerscripts@24.5.0
-
-
 # August 23
 
 ## sfpowerscripts
