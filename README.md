@@ -3,11 +3,50 @@
 
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
 
+# October 23
+
+**October 23 (v25.0.6)** features the following:
+
+## :star: New Features
+
+* **feat(install): introduce a unified package installation command**  [#1420](https://github.com/dxatscale/sfpowerscripts/pull/1420) 
+
+sfp features a new command called `sfp package:install` which can auto determine the type of a package and proceed to install in an environment. This allows users to easily install a package into an environment without using the individual package commands.  The individual commands now carry a deprecation notice and will be removed from future releases
+
+* **feat(docker): use node 18 LTS instead of the latest 20.x version** 
+
+We have downgraded the docker image to use LTS version of node rather than the latest, as there was some issues noted with certain plugins.  Also @rody and @ethan-sargent  was able to reduce the size of the image by 1.5Gigs, this results in quicker download. Thanks a heap guys!
+
+ * **feat(browserforce): Updated browserforce to dxatscale fork**
+ 
+ Browserforce is temporarily switched to a dxatscale fork, with the latest salesforce dependencies,  We plan to submit the changes to the main stream in a short while.  You might need to use ```--targetusername``` in your script if you are using the same.
+ 
+ 
+## :beetle: Bug Fixes
+
+* fix(picklist): PicklistEnabler errors out if picklist doesn't exist on target org  #1414  . Thanks @cjbradshaw  for  figuring out the issue and the fix
+*  fix(packagediff): fix packages being built when the path to package start with same structure. Fixes #1396. Thanks @thraco 
+*  fix(help): Fix help segments not getting displayed when using ```sfp topic``` in terminal
+*  Minor bug fixes in error handling in apex tests
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@24.5.0...@dxatscale/sfpowerscripts@25.0.6
+
+## Contributors
+Thanks to @rody, @thraco, @ethan-sargent, @cjbradshaw for your contributions in this release.
+
+## sfops
+
+sfops beta version is currently available to project sponsors. Head to https://docs.dxatscale.io/sfops/overview to learn more
+
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@23.4.2...@dxatscale/sfpowerscripts@24.5.0
+
+
 # August 23
 
 ## sfpowerscripts
 
-**August23 (v24.5.0)** features the following
+**August 23 (v24.5.0)** features the following
 
 Update to the the docker image is the key highlight for this release, We have started using ubuntu 22 as the base image as opposed to Salesforce CLI base image, due to the root issue as discussed in #1409.  Finally, profile merge/retrieve makes a comeback and is available in sfp. Now you can really deprecate sfpowerkit :)
 
