@@ -1,7 +1,58 @@
 # DX@Scale Release Log
 
-
 Please note only major releases will be published. Hotfix releases will be updated in each individual repository's release notes.
+
+# December 23
+
+**December 23 (v25.5.3)** features the following:
+
+## sfpowerscripts
+
+Time flies! and thanks to everyone who contributed to sfp this year. It was monumental, we reached more users with more orgs actively approaching modular development like never before
+
+We wrap the final release of the year and wish you all a prosperous new years.
+
+December 23 (v25.5.3) of sfp introduces the following changes, and this release is mainly possible due to all of our contributions! Keep it coming!
+
+## :star: New Features
+* feat(validate) : Always use the newest validation scratch org during Validate by @alanjaouen in https://github.com/dxatscale/sfpowerscripts/pull/1428
+
+## :beetle: Bug Fixes
+* fix(README): contributors link target dx@scale repo by @alanjaouen in https://github.com/dxatscale/sfpowerscripts/pull/1424
+* fix(workItemfilters): Support multiple workItem filters by @brandonmikeska in https://github.com/dxatscale/sfpowerscripts/pull/1429
+* fix(orgInfo): display login URL instead of instance URL for scratch orgs by @michallachowski in https://github.com/dxatscale/sfpowerscripts/pull/1432
+* fix(docs): Update example commands and typos by @crazynammer in https://github.com/dxatscale/sfpowerscripts/pull/1431
+* fix(docs): some typos in documentation and comments by @nabondance in https://github.com/dxatscale/sfpowerscripts/pull/1433
+* fix(apex-test): additional parallel run error by @jdrbc in https://github.com/dxatscale/sfpowerscripts/pull/1436
+* feat(install): Specify testLevel for a not optimized source package validating by @nabondance in https://github.com/dxatscale/sfpowerscripts/pull/1434
+* fix(deploy):Honor waitTime for Deploy commands by @brandonmikeska in https://github.com/dxatscale/sfpowerscripts/pull/1443
+* fix(picklist): Bug fix for picklist Deployment by @cjbradshaw in https://github.com/dxatscale/sfpowerscripts/pull/1442
+
+## New Contributors
+* @brandonmikeska made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1429
+* @crazynammer made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1431
+* @jdrbc made their first contribution in https://github.com/dxatscale/sfpowerscripts/pull/1436
+
+**Full Changelog**: https://github.com/dxatscale/sfpowerscripts/compare/@dxatscale/sfpowerscripts@25.0.6...@dxatscale/sfpowerscripts@25.5.3
+
+## sfops
+
+sfops version is currently available to project sponsors. Head to https://docs.dxatscale.io/sfops/overview to learn more
+
+### 📆 : Events
+
+* meeting(q&a): sfops - open discussion - Mon Dec 12 8:00 - 9:00 PM AEST.  Register through our slack channel.
+
+### :star: New Features
+
+* feat(workflow): Centralizes more workflows into sfops-gh-actions in your repositories, so you can apply to more project repositories with ease
+* feat(workflow): Branching support to workflows and dashboard
+* feat(environments): Add support for quickbuild and support development environments
+
+## :beetle: Bug Fixes
+* fix(general): Multiple bug fixes
+
+sfops is in early development cycle and continued to be updated with various bug fixes.
 
 # October 23
 
